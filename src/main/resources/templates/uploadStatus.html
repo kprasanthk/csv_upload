@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<body>
+
+<h1>Upload Status</h1>
+
+<div th:if="${message}">
+    <h2 th:text="${message}"/>
+</div>
+
+<div>
+<table border="1">
+    <thead>
+        <tr> 
+            <th th:each="head : ${header}"> <span th:text="${head}"> </span> </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="row : ${rows}">
+            <td><span th:text="${row.id}"> </span></td>
+            <td th:each="var : ${row.variables}">
+            <span th:text="${var}"> </span>
+            </td>
+            <td><span th:text="${row.decision}"> </span></td>
+        </tr>
+    </tbody>
+</table>
+
+</div>
+
+</body>
+</html>
